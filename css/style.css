@@ -17,13 +17,12 @@
     transform: translate(-50%, -50%);
     opacity:0.5;
     transition: opacity 500ms ease;
-    animation-name:wave;
+    /* animation-name:wave;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
-    box-shadow: 0 0 0 30px rgb(255, 0, 0, 0.5);
+    box-shadow: 0 0 0 30px rgb(255, 0, 0, 0.5); */
     z-index: 99999999;
-
 }
 
 @keyframes wave {
@@ -41,3 +40,45 @@
     }
     
 }
+
+#stage{
+    width:90%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding:10px;
+    background-color: rgba(126, 252, 0, 0.767);
+    border-radius: 10px;
+    font-size: calc(1vw *1.7 *4);
+    font-family: Ubuntu, sans-serif;
+    z-index: 9999;
+}
+
+#stage:after{
+    content: '';
+    display: inline-block;
+    width:20px;
+    height: calc(1vw * 1.7 * 4);
+    margin-left: 5px;
+    background-color: black;
+    vertical-align: text-top;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
